@@ -49,6 +49,7 @@
 
     function skipEmpty(lunchList) {
       var size = 0;
+      
       for (var i = 0; i < lunchList.length; i++) {
         //trim list items and check length again
         if (lunchList[i].trim().length > 0) {
