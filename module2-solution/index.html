@@ -3,8 +3,9 @@
 
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <meta http-equiv="expires" content="-1" />
-    <meta http-equiv="pragma" content="no-cache" />
+    <meta charset="utf-8" />
+    <!-- <meta http-equiv="expires" content="-1" />
+    <meta http-equiv="pragma" content="no-cache" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Check Off</title>
@@ -33,7 +34,7 @@
       <ul>
         <li data-ng-repeat="buy in vm.buyList">
           Buy {{buy.quantity}} {{buy.name}}
-          <button ng-click="vm.swap($index);">Bought</button>
+          <button data-ng-click="vm.swap($index);">Bought</button>
         </li>
       </ul>
     </div>
@@ -49,7 +50,6 @@
         </li>
       </ul>
     </div>
-
 
   </body>
 
