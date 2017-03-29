@@ -4,6 +4,7 @@
     angular.module('LunchCheck')
     .controller('LunchCheckController', LunchCheckController);
 
+    //LunchCheckController.$inject = [];
     function LunchCheckController() {
       /* jshint validthis: true */
       var vm = this;
