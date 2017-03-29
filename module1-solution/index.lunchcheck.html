@@ -1,5 +1,6 @@
 
-<div data-ng-controller="LunchCheckController as vm">
+<div>
+
   <form name="firstForm" id="firstForm" method="post" data-ng-submit="vm.submit();">
     <label for="lunch">What do you usually eat for lunch?  Empty list items will not be counted.</label>
     <br />
@@ -7,5 +8,7 @@
     <br />
     <input type="submit" name="submit" id="submit" value="Check If Too Much" />
   </form>
+
   <span style="color: {{vm.textColor}};">{{vm.lunchCheckResult}}</span>
+  
 </div>
