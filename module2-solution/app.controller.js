@@ -1,3 +1,4 @@
+
 (function(){
   'use strict';
 
@@ -9,6 +10,14 @@
     function ToBuyController(ShoppingListCheckOffService) {
       /* jshint validthis: true */
       var vm = this;
+
+      vm.buyList = ShoppingListCheckOffService.getToBuyItems();
+
+      vm.swap = swap;
+
+      function swap(listIndex) {
+        ShoppingListCheckOffService.swap(listIndex);
+      }
     }
 
     AlreadyBoughtController.$inject = ['ShoppingListCheckOffService'];
@@ -16,6 +25,7 @@
       /* jshint validthis: true */
       var vm = this;
 
+      vm.boughtList = ShoppingListCheckOffService.getHadBoughtItems();
     }
 
 })();

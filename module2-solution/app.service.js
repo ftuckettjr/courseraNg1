@@ -5,8 +5,11 @@
     .service('ShoppingListCheckOffService', ShoppingListCheckOffService);
 
     function ShoppingListCheckOffService() {
-        var items = {
-          toBuy: [{
+      var service = this;
+
+      var items = {
+        toBuy: [
+          {
             name: "cookie",
             quantity: 1
           },{
@@ -21,25 +24,38 @@
           },{
             name: "cheese",
             quantity: 5
-          }],
-          hadBought: []
-        };
+          }
+        ],
+        hadBought: [
+          /*{
+            name: "pickles",
+            quantity: 6
+          }*/
+        ]
+      };
 
-        var service = {
-            swap: swap,
-            someVitemsalue: items
-        };
-        return service;
+      service.swap = swap;
+      service.getToBuyItems = getToBuyItems;
+      service.getHadBoughtItems = getHadBoughtItems;
 
-        ////////////
+      ////////////
 
-        function swap() {
-            /* */
-        };
+      function swap(listIndex) {
+        /* */
+        var item = items.toBuy.splice(listIndex, 1);
 
-        function validate() {
-            /* */
-        };
+        items.hadBought.push(item[0]);
+      };
+
+      function getToBuyItems() {
+        /* */
+        return items.toBuy;
+      };
+
+      function getHadBoughtItems() {
+        /* */
+        return items.hadBought;
+      };
     }
 
 })();

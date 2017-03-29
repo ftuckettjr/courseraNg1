@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
   <head>
-    <meta charset="utf-8" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="expires" content="-1" />
+    <meta http-equiv="pragma" content="no-cache" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Check Off</title>
@@ -23,18 +25,29 @@
 
     <!-- <div data-ng-view=""></div> -->
 
-    <div>
+    <div data-ng-controller="ToBuyController as vm">
+      <h3>To Buy</h3>
 
-      <form name="firstForm" id="firstForm" method="post" data-ng-submit="vm.submit();">
-        <label for="lunch">What do you usually eat for lunch?  Empty list items will not be counted.</label>
-        <br />
-        <input type="text" name="lunch" id="lunch" size="50" data-ng-model="vm.lunch" placeholder="Enter your list separated by a comma (please)" style="border: 1px solid {{vm.borderColor}};" autofocus="autofocus" />
-        <br />
-        <input type="submit" name="submit" id="submit" value="Check If Too Much" />
-      </form>
+      <span data-ng-if="vm.buyList.length == 0">Everything is bought!</span>
 
-      <span style="color: {{vm.textColor}};">{{vm.lunchCheckResult}}</span>
+      <ul>
+        <li data-ng-repeat="buy in vm.buyList">
+          Buy {{buy.quantity}} {{buy.name}}
+          <button ng-click="vm.swap($index);">Bought</button>
+        </li>
+      </ul>
+    </div>
 
+    <div data-ng-controller="AlreadyBoughtController as vm">
+      <h3>Already Bought</h3>
+
+      <span data-ng-if="vm.boughtList.length == 0">Nothing bought yet</span>
+
+      <ul>
+        <li data-ng-repeat="bought in vm.boughtList">
+          Bought {{bought.quantity}} {{bought.name}}
+        </li>
+      </ul>
     </div>
 
 
