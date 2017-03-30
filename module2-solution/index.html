@@ -25,30 +25,38 @@
   <body>
 
     <!-- <div data-ng-view=""></div> -->
+    <div class="container">
+      <h1 class="h1">AngularJS Project 2</h1>
 
-    <div data-ng-controller="ToBuyController as vm">
-      <h3>To Buy</h3>
+      <div class="row">
 
-      <span data-ng-if="vm.buyList.length == 0">Everything is bought!</span>
+        <div class="col-md-6" data-ng-controller="ToBuyController as vm">
+          <h3 class="h3">To Buy</h3>
 
-      <ul>
-        <li data-ng-repeat="buy in vm.buyList">
-          Buy {{buy.quantity}} {{buy.name}}
-          <button data-ng-click="vm.swap($index);">Bought</button>
-        </li>
-      </ul>
-    </div>
+          <span class="text-danger" data-ng-if="vm.buyList.length == 0">Everything is bought!</span>
 
-    <div data-ng-controller="AlreadyBoughtController as vm">
-      <h3>Already Bought</h3>
+          <ol>
+            <li data-ng-repeat="buy in vm.buyList">
+              Buy {{buy.quantity}} {{buy.name}}
+              <button class="btn-info btn-xs" data-ng-click="vm.swap($index);">Bought</button>
+            </li>
+          </ol>
+        </div>
 
-      <span data-ng-if="vm.boughtList.length == 0">Nothing bought yet</span>
+        <div class="col-md-6" data-ng-controller="AlreadyBoughtController as vm">
+          <h3 class="h3">Already Bought</h3>
 
-      <ul>
-        <li data-ng-repeat="bought in vm.boughtList">
-          Bought {{bought.quantity}} {{bought.name}}
-        </li>
-      </ul>
+          <span class="text-danger" data-ng-if="vm.boughtList.length == 0">Nothing bought yet</span>
+
+          <ol>
+            <li data-ng-repeat="bought in vm.boughtList">
+              Bought {{bought.quantity}} {{bought.name}}
+            </li>
+          </ol>
+        </div>
+
+      </div>
+
     </div>
 
   </body>
