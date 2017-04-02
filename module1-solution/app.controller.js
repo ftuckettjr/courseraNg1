@@ -46,17 +46,17 @@
 
         if (validListLength == min) {
           result = "Please enter data first";
-          vm.textColor = "red";
+          vm.textColor = "text-danger";
           vm.borderColor = "red";
         }
         else if (validListLength > min && validListLength <= size) {
           result = "Enjoy!";
-          vm.textColor = "green";
+          vm.textColor = "text-success";
           vm.borderColor = "green";
         }
         else if (validListLength > size) {
           result = "Too much!";
-          vm.textColor = "green";
+          vm.textColor = "text-success";
           vm.borderColor = "green";
         }
 

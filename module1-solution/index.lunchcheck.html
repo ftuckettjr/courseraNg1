@@ -1,14 +1,25 @@
 
-<div>
 
-  <form name="firstForm" id="firstForm" method="post" data-ng-submit="vm.submit();">
-    <label for="lunch">What do you usually eat for lunch?  Empty list items will not be counted.</label>
-    <br />
-    <input type="text" name="lunch" id="lunch" size="50" data-ng-model="vm.lunch" placeholder="Enter your list separated by a comma (please)" style="border: 1px solid {{vm.borderColor}};" autofocus="autofocus" />
-    <br />
-    <input type="submit" name="submit" id="submit" value="Check If Too Much" />
-  </form>
+<div class="container">
+  <h1 class="h1">Lunch Check</h1>
 
-  <span style="color: {{vm.textColor}};">{{vm.lunchCheckResult}}</span>
-  
+  <div class="row">
+
+    <div class="col-md-6">
+
+      <form name="firstForm" id="firstForm" method="post" data-ng-submit="vm.submit();">
+        <label for="lunch">What do you usually eat for lunch?  Empty list items will not be counted.</label>
+        <br />
+        <input type="text" name="lunch" id="lunch" size="50"
+          data-ng-model="vm.lunch" placeholder="Enter your list separated by a comma (please)"
+          style="border: 1px solid {{vm.borderColor}};" autofocus="autofocus" />
+        <br />
+        <input type="submit" name="submit" id="submit" value="Check If Too Much" class="btn-info btn-xs" />
+      </form>
+
+      <span  class="{{vm.textColor}}">{{vm.lunchCheckResult}}</span>
+
+    </div>
+
+  </div>
 </div>
