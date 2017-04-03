@@ -1,3 +1,4 @@
+
 (function(){
   'use strict';
 
@@ -18,13 +19,12 @@
       function getMatchedMenuItems(searchTerm) {
         /* */
 
-        service.foundItems = [];
-        //console.log(searchTerm);
-
         //if no value entered
-        if (searchTerm.length == 0) {
+        if (searchTerm.length === 0) {
           return $q.reject();
         }
+
+        service.foundItems = [];
 
         return $http({
             method: 'GET',
@@ -32,7 +32,6 @@
           })
           .then(function (result) {
             var description = "";
-            //console.log(searchTerm);
 
             var resultSet = result.data.menu_items;
 
