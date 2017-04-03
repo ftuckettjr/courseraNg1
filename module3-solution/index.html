@@ -8,13 +8,15 @@
     <meta http-equiv="pragma" content="no-cache" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Lunch Check</title>
+    <title>Check Off</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.js"></script>
 
     <script src="app.js"></script>
     <script src="app.config.js"></script>
+    <script src="app.directive.js"></script>
+    <script src="app.service.js"></script>
     <script src="app.controller.js"></script>
 
     <!-- Latest compiled and minified CSS -->
@@ -23,7 +25,26 @@
 
   <body>
 
-    <div data-ng-view=""></div>
+    <!-- <div data-ng-view=""></div> -->
+    <div class="container">
+      <h1 class="h1">AngularJS Project 3</h1>
+
+      <div class="row">
+
+        <div class="col-md-6" data-ng-controller="NarrowItDownController as vm">
+          <h3 class="h3">Search Menu</h3>
+
+          <input type="text" data-ng-model="vm.searchTerm" placeholder="Enter Search Term" />
+          <button class="btn-info btn-xs" ng-click="vm.getMatchedMenuItems();">Narrow It Down For Me!</button>
+
+          <found-items
+            items-found="vm.found"
+            remove-item="vm.removeItem(index)"></found-items>
+        </div>
+
+      </div>
+
+    </div>
 
   </body>
 
