@@ -33,7 +33,7 @@
         <div class="col-md-6" data-ng-controller="ToBuyController as vm">
           <h3 class="h3">To Buy</h3>
 
-          <span class="text-danger" data-ng-if="vm.buyList.length == 0">Everything is bought!</span>
+          <span class="text-danger" data-ng-if="vm.buyList.length === 0">Everything is bought!</span>
 
           <ol>
             <li data-ng-repeat="buy in vm.buyList">
@@ -46,7 +46,7 @@
         <div class="col-md-6" data-ng-controller="AlreadyBoughtController as vm">
           <h3 class="h3">Already Bought</h3>
 
-          <span class="text-danger" data-ng-if="vm.boughtList.length == 0">Nothing bought yet</span>
+          <span class="text-danger" data-ng-if="vm.boughtList.length === 0">Nothing bought yet</span>
 
           <ol>
             <li data-ng-repeat="bought in vm.boughtList">
