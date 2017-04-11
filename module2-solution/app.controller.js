@@ -1,31 +1,34 @@
 
-(function(){
+(function () {
   'use strict';
 
-    angular.module('ShoppingListCheckOff')
-    .controller('ToBuyController', ToBuyController)
-    .controller('AlreadyBoughtController', AlreadyBoughtController);
+  //Single Responsibility
+  angular.module('ShoppingListCheckOff')
+  .controller('ToBuyController', ToBuyController)
+  .controller('AlreadyBoughtController', AlreadyBoughtController);
 
-    ToBuyController.$inject = ['ShoppingListCheckOffService'];
-    function ToBuyController(ShoppingListCheckOffService) {
-      /* jshint validthis: true */
-      var vm = this;
+  ToBuyController.$inject = ['ShoppingListCheckOffService'];
+  function ToBuyController(ShoppingListCheckOffService) {
+    /* jshint validthis: true */
+    var vm = this;
 
-      vm.buyList = ShoppingListCheckOffService.getToBuyItems();
+    //updated by reference
+    vm.buyList = ShoppingListCheckOffService.getToBuyItems();
 
-      vm.swap = swap;
+    vm.swap = swap;
 
-      function swap(listIndex) {
-        ShoppingListCheckOffService.swap(listIndex);
-      }
+    function swap(listIndex) {
+      ShoppingListCheckOffService.swap(listIndex);
     }
+  }
 
-    AlreadyBoughtController.$inject = ['ShoppingListCheckOffService'];
-    function AlreadyBoughtController(ShoppingListCheckOffService) {
-      /* jshint validthis: true */
-      var vm = this;
+  AlreadyBoughtController.$inject = ['ShoppingListCheckOffService'];
+  function AlreadyBoughtController(ShoppingListCheckOffService) {
+    /* jshint validthis: true */
+    var vm = this;
 
-      vm.boughtList = ShoppingListCheckOffService.getHadBoughtItems();
-    }
+    //updated by reference
+    vm.boughtList = ShoppingListCheckOffService.getHadBoughtItems();
+  }
 
 })();

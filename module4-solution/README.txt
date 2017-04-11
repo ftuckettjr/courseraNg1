@@ -1,0 +1,3 @@
+Restaurant Manu AngularJS project
+
+//

@@ -8,29 +8,23 @@
     <meta http-equiv="pragma" content="no-cache" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>--Index--</title>
+    <title>Restaurant Menu</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
   </head>
+
   <body>
 
     <div class="container">
-      <h1 class="h1">AngularJS Projects</h1>
+      <h1 class="h1">AngularJS Project 4</h1>
 
       <div class="row">
 
         <div class="col-md-6">
-
-          <ul>
-            <li data-ng-repeat="item in [1,2,3,4,5]">
-              <a data-ng-href="module{{item}}-solution/">module{{item}}-solution</a>
-            </li>
-          </ul>
-
-          <a href="https://www.google.com/">leave</a>
-
+          <ui-view></ui-view>
         </div>
+
       </div>
 
       <p>
@@ -41,12 +35,24 @@
   	        alt="Valid XHTML 1.0 Transitional" height="31" width="88" />
         </a>
   	  </p>
+
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
 
-    <script src="app.js"></script>
+
+    <script src="js/menuapp.module.js"></script>
+    <script src="js/data.module.js"></script>
+
+    <script src="js/routes.js"></script>
+
+    <script src="js/categories.component.js"></script>
+    <script src="js/items.component.js"></script>
+    <script src="js/menudata.service.js"></script>
+
+    <script src="js/main-categorylist.controller.js"></script>
 
   </body>
+
 </html>

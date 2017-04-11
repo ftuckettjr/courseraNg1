@@ -1,6 +1,6 @@
 
 /*
-(function(){
+(function () {
   'use strict';
 
   //Single Responsibility
