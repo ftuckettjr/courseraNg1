@@ -27,18 +27,10 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
     controller: 'MainCategoryListController as catList',
     resolve: {
       categories: ['MenuDataService', function (MenuDataService) {
-        MenuDataService.getAllCategories()
-        .then(function(result) {
-          console.log("State Resolve", result);
-          return result;
-        })
-        .catch(function(error) {
-          console.log("Error", error);
-          return [];
-        });
+        return MenuDataService.getAllCategories();
       }]
     }
-  })
+  });
 
   /*
   .state('category.itemDetail', {

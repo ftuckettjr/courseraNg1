@@ -36,19 +36,21 @@
               service.getCategories.push(name);
             //}
           }
-          console.log(service.getCategories);
+          //console.log(service.getCategories);
 
           // return processed items
           return service.getCategories;
-      })
+      });
       //don't catch b/c subsequent .then() does not capture this current error
       /*.catch(function (error) {
         return foundItems;//error.data;
       })*/
-      ;
     }
 
     function getItemsForCategory(categoryShortName) {
+        //reset array
+        service.getItemCategory = [];
+        
       return $http({
           method: 'GET',
           url: ('https://davids-restaurant.herokuapp.com/menu_items.json?category=' + categoryShortName)
@@ -59,12 +61,13 @@
           var resultSet = result.data;
 
           for (var i = 0; i < resultSet.length; i++) {
-            name = resultSet[i].name;
+            name = resultSet[i];
 
             //if (description.toLowerCase().indexOf(searchTerm) !== -1) {
               service.getItemCategory.push(name);
             //}
           }
+          console.log(service.getItemCategory);
 
           // return processed items
           return service.getItemCategory;

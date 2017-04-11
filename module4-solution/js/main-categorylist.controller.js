@@ -7,8 +7,8 @@
 
   MainCategoryListController.$inject = ['MenuDataService', 'categories'];
   function MainCategoryListController(MenuDataService, categories) {
-    var mainlist = this;
-    mainlist.categories = categories;
+    var mainList = this;
+    mainList.categories = categories;
   }
 
 })();
