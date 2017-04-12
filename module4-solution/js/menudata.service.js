@@ -30,7 +30,7 @@
           var resultSet = result.data;
 
           for (var i = 0; i < resultSet.length; i++) {
-            name = resultSet[i].name;
+            name = resultSet[i];
 
             //if (description.toLowerCase().indexOf(searchTerm) !== -1) {
               service.getCategories.push(name);
@@ -40,17 +40,15 @@
 
           // return processed items
           return service.getCategories;
-      });
+      })
       //don't catch b/c subsequent .then() does not capture this current error
       /*.catch(function (error) {
         return foundItems;//error.data;
       })*/
+      ;
     }
 
     function getItemsForCategory(categoryShortName) {
-        //reset array
-        service.getItemCategory = [];
-        
       return $http({
           method: 'GET',
           url: ('https://davids-restaurant.herokuapp.com/menu_items.json?category=' + categoryShortName)
@@ -58,7 +56,7 @@
         .then(function (result) {
           var name = "";
 
-          var resultSet = result.data;
+          var resultSet = result.data.menu_items;
 
           for (var i = 0; i < resultSet.length; i++) {
             name = resultSet[i];
@@ -67,7 +65,7 @@
               service.getItemCategory.push(name);
             //}
           }
-          console.log(service.getItemCategory);
+          //console.log(service.getItemCategory);
 
           // return processed items
           return service.getItemCategory;

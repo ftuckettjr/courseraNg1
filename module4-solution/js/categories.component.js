@@ -5,7 +5,7 @@
   //Single Responsibility
   angular.module('MenuApp')
   .component('categories', {
-	//template: 'testing...',
+	  //template: 'testing...',
     templateUrl: 'views/categorylist.template.html',
     bindings: {
       categories: '<'

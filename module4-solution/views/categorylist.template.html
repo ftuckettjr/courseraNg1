@@ -1,24 +1,10 @@
 
-<ul>
-	<li>...testing...</li>
-</ul>
+<li ng-repeat="category in $ctrl.categories" >
+  <a ui-sref="items({itemId: category.short_name })">{{ category.name }}</a>
+</li>
 
-<ul>
-  <li ng-repeat="category in $ctrl.categories" ui-sref="mainList.itemDetail({itemId: $index})">
-   {{ category }}
-  </li>
-</ul>
-
-
-
-<ul>
-	<li>{{(new Date();) | date:'yyyy-MM-dd'}}</li>
-</ul>
-<!-- 
-<ul>
-  <li ng-repeat="category in catList.categories" ui-sref="mainList.itemDetail({itemId: $index})">
-    {{ category.quantity }} of {{ category.name }}
-  </li>
-</ul>
+<!--
+<ui-view></ui-view>
  -->
+
  

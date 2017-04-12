@@ -4,6 +4,12 @@
 
   //Single Responsibility
   angular.module('MenuApp')
-  .component('items', {});
+  .component('items', {
+	  //template: 'testing...',
+    templateUrl: 'views/item-detail.template.html',
+    bindings: {
+      items: '<'
+    }
+  });
 
 })();
