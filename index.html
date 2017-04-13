@@ -12,6 +12,12 @@
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+    
+    <style type="text/css">
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak, .ng-hide {
+            display: none !important;
+        }
+    </style>    
   </head>
   <body>
 
@@ -23,8 +29,8 @@
         <div class="col-md-6">
 
           <ul>
-            <li data-ng-repeat="item in [1,2,3,4,5]">
-              <a data-ng-href="module{{item}}-solution/">module{{item}}-solution</a>
+            <li class="ng-cloak" data-ng-repeat="item in [1,2,3,4,5]">
+              <a data-ng-href="module{{item}}-solution/index.html">module{{item}}-solution</a>
             </li>
           </ul>
 
