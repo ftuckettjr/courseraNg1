@@ -8,6 +8,7 @@
 
   MenuDataService.$inject = ['$http'];
   function MenuDataService($http) {
+    /* jshint validthis: true */
     var service = this;
 
     service.getCategories = [];
@@ -32,20 +33,16 @@
           for (var i = 0; i < resultSet.length; i++) {
             name = resultSet[i];
 
-            //if (description.toLowerCase().indexOf(searchTerm) !== -1) {
-              service.getCategories.push(name);
-            //}
+            service.getCategories.push(name);
           }
-          //console.log(service.getCategories);
 
           // return processed items
           return service.getCategories;
-      })
+      });
       //don't catch b/c subsequent .then() does not capture this current error
       /*.catch(function (error) {
         return foundItems;//error.data;
       })*/
-      ;
     }
 
     function getItemsForCategory(categoryShortName) {
@@ -61,20 +58,16 @@
           for (var i = 0; i < resultSet.length; i++) {
             name = resultSet[i];
 
-            //if (description.toLowerCase().indexOf(searchTerm) !== -1) {
-              service.getItemCategory.push(name);
-            //}
+            service.getItemCategory.push(name);
           }
-          //console.log(service.getItemCategory);
 
           // return processed items
           return service.getItemCategory;
-      })
+      });
       //don't catch b/c subsequent .then() does not capture this current error
       /*.catch(function (error) {
         return foundItems;//error.data;
       })*/
-      ;
     }
 
   }

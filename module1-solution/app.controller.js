@@ -46,7 +46,7 @@
 
       var validListLength = skipEmpty(lunchList);
 
-      if (validListLength == min) {
+      if (validListLength === min) {
         result = "Please enter data first";
         vm.textColor = "text-danger";
         vm.borderColor = "red";

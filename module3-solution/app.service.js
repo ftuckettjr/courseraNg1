@@ -8,6 +8,7 @@
 
   MenuSearchService.$inject = ['$http', '$q'];
   function MenuSearchService($http, $q) {
+    /* jshint validthis: true */
     var service = this;
 
     service.foundItems = [];

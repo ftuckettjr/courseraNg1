@@ -1,4 +1,6 @@
 
+<h3 data-ng-if="ctrl.found.length > 0">{{ctrl.found.length}} result(s) found</h3>
+
 <ol>
   <li data-ng-repeat="item in ctrl.found">
     {{item.name}} ({{item.short_name}}) - {{item.description}}

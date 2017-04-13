@@ -7,6 +7,7 @@
     .service('ShoppingListCheckOffService', ShoppingListCheckOffService);
 
   function ShoppingListCheckOffService() {
+    /* jshint validthis: true */
     var service = this;
 
     var items = {
@@ -44,9 +45,12 @@
 
     function swap(listIndex) {
       /* */
-      var item = items.toBuy.splice(listIndex, 1);
+      var swapping = items.toBuy[listIndex];
 
-      items.hadBought.push(item[0]);
+      //reference
+      items.toBuy.splice(listIndex, 1);
+
+      items.hadBought.push(swapping);
     }
 
     function getToBuyItems() {

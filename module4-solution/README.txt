@@ -1,3 +1,3 @@
-Restaurant Manu AngularJS project
+Restaurant Menu AngularJS project
 
 //

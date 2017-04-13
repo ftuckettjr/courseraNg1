@@ -48,22 +48,6 @@
       }
     });
 
-    /*
-    .state('category.itemDetail', {
-      //url: '/item-detail',
-      url: '/item-detail/{itemId}',
-      templateUrl: 'views/item-detail.template.html',
-      controller: "ItemDetailController as itemDetail",
-      resolve: {
-        items: ['MenuDataService', function (MenuDataService) {
-          return MenuDataService.getItemsForCategory(itemId);
-        }]
-      },
-      params: {
-        itemId: null
-      }
-    });*/
-
   }
 
 })();

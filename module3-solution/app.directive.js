@@ -26,6 +26,7 @@
   }
 
   function FoundItemsDirectiveController() {
+    /* jshint validthis: true */
     var list = this;
   }
 

@@ -8,13 +8,9 @@
 
   ItemDetailController.$inject = ['items'];
   function ItemDetailController(items) {
+    /* jshint validthis: true */
     var itemDetail = this;
     itemDetail.items = items;
-    //console.log("items", items);
-    /*var item = items[$stateParams.itemId];
-    itemDetail.name = item.name;
-    itemDetail.quantity = item.quantity;
-    itemDetail.description = item.description;*/
   }
 
 })();
