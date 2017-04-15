@@ -10,6 +10,13 @@
     bindings: {
       categories: '<'
     }
+  })
+  .component('categories2', {
+	  //template: 'testing...',
+    templateUrl: 'views/categorylist.template2.html',
+    bindings: {
+      categories: '<'
+    }
   });
 
 })();

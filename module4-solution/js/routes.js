@@ -46,6 +46,33 @@
           return MenuDataService.getItemsForCategory($stateParams.itemId);
         }]
       }
+    })
+
+    // Premade list page
+    .state('category2', {
+      url: '/main-category2',
+      templateUrl: 'views/main-category.template2.html',
+      controller: 'MainCategoryListController as catList',
+      resolve: {
+        categories: ['MenuDataService', function (MenuDataService) {
+          return MenuDataService.getAllCategories();
+        }]
+      }
+    })
+
+    // Item detail
+    .state('category2.items', {
+      url: '/item-detail/{itemId}',
+      templateUrl: 'views/main-item.template2.html',
+      controller: 'ItemDetailController as itemDetail',
+      /*params: {
+        itemId: null
+      },*/
+      resolve: {
+        items: ['MenuDataService', '$stateParams', function (MenuDataService, $stateParams) {
+          return MenuDataService.getItemsForCategory($stateParams.itemId);
+        }]
+      }
     });
 
   }
