@@ -65,9 +65,9 @@
       url: '/item-detail/{itemId}',
       templateUrl: 'views/main-item.template2.html',
       controller: 'ItemDetailController as itemDetail',
-      /*params: {
-        itemId: null
-      },*/
+      params: {
+        itemId: ''
+      },
       resolve: {
         items: ['MenuDataService', '$stateParams', function (MenuDataService, $stateParams) {
           return MenuDataService.getItemsForCategory($stateParams.itemId);

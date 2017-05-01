@@ -26,7 +26,7 @@
           url: 'https://davids-restaurant.herokuapp.com/categories.json'
         })
         .then(function (result) {
-          var name = "";
+          /*var name = "";
 
           var resultSet = result.data;
 
@@ -34,7 +34,9 @@
             name = resultSet[i];
 
             service.getCategories.push(name);
-          }
+          }*/
+
+          service.getCategories = result.data;
 
           // return processed items
           return service.getCategories;
@@ -54,7 +56,7 @@
           url: ('https://davids-restaurant.herokuapp.com/menu_items.json?category=' + categoryShortName)
         })
         .then(function (result) {
-          var name = "";
+          /*var name = "";
 
           var resultSet = result.data.menu_items;
 
@@ -62,7 +64,9 @@
             name = resultSet[i];
 
             service.getItemCategory.push(name);
-          }
+          }*/
+
+          service.getItemCategory = result.data;
 
           // return processed items
           return service.getItemCategory;

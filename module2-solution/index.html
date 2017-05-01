@@ -12,6 +12,12 @@
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+
+    <style type="text/css">
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak, .ng-hide {
+            display: none !important;
+        }
+    </style>
   </head>
 
   <body>
@@ -25,10 +31,10 @@
         <div class="col-md-6" data-ng-controller="ToBuyController as vm">
           <h3 class="h3">To Buy</h3>
 
-          <span class="text-danger" data-ng-if="vm.buyList.length === 0">Everything is bought!</span>
+          <span class="text-danger ng-cloak" data-ng-if="vm.buyList.length === 0">Everything is bought!</span>
 
           <ol>
-            <li data-ng-repeat="buy in vm.buyList">
+            <li class="ng-cloak" data-ng-repeat="buy in vm.buyList">
               Buy {{buy.quantity}} {{buy.name}}
               <button class="btn-info btn-xs" data-ng-click="vm.swap($index);">Bought</button>
             </li>
@@ -41,7 +47,7 @@
           <span class="text-danger" data-ng-if="vm.boughtList.length === 0">Nothing bought yet</span>
 
           <ol>
-            <li data-ng-repeat="bought in vm.boughtList">
+            <li class="ng-cloak" data-ng-repeat="bought in vm.boughtList">
               Bought {{bought.quantity}} {{bought.name}}
             </li>
           </ol>
